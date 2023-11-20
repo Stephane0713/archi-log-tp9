@@ -34,6 +34,6 @@ public class Book implements IBook {
     @Override
     public String preview() {
         // Simule l'affichage d'un aperçu du livre (indiquez par exemple "Preview of Clean Code: [First few lines of the book...]")
-        return null;
+        return "Preview of " + title + ": Priced at " + price;
     }
 }

@@ -27,26 +27,26 @@ public class Main {
         /********************************************************************************
          * PATTERN ADAPTER
          ********************************************************************************/
-        IBookStore bookStoreAdapter = new BookStoreAdapter(oldBookStore);
-        // On s'attend à ce que le livre soit récupéré via l'adaptateur
-        Book adaptedBook = bookStoreAdapter.fetchBook("Design Patterns");
-        System.out.println("Adapter Test: " + adaptedBook.getTitle());
-        // Résultat attendu : "Adapter Test: Design Patterns"
+        //IBookStore bookStoreAdapter = new BookStoreAdapter(oldBookStore);
+        //// On s'attend à ce que le livre soit récupéré via l'adaptateur
+        //Book adaptedBook = bookStoreAdapter.fetchBook("Design Patterns");
+        //System.out.println("Adapter Test: " + adaptedBook.getTitle());
+        //// Résultat attendu : "Adapter Test: Design Patterns"
 
         /********************************************************************************
          * PATTERN DECORATOR
          ********************************************************************************/
-        // Test pour le Pattern Decorator
+        //// Test pour le Pattern Decorator
         Book basicBook = new Book("Clean Code", 14);
-        LibraryBookDecorator libraryBook = new LibraryBookDecorator(basicBook);
-        // On s'attend à ce que le library book soit disponible pour un prêt
-        System.out.println("Decorator Test: " + libraryBook);
-        // Résultat attendu : "Decorator Test: Clean Code is available for a loan."
-        // A présent on indique le livre comme prêté
-        libraryBook.loanOut(LocalDate.now());
-        // On s'attend à ce que le library book soit désormais indisponible pour un prêt
-        System.out.println("Decorator Test: " + libraryBook);
-        // Résultat attendu : "Clean Code has been loaned out. Due date: 2023-11-14" (date du jour)
+        //LibraryBookDecorator libraryBook = new LibraryBookDecorator(basicBook);
+        //// On s'attend à ce que le library book soit disponible pour un prêt
+        //System.out.println("Decorator Test: " + libraryBook);
+        //// Résultat attendu : "Decorator Test: Clean Code is available for a loan."
+        //// A présent on indique le livre comme prêté
+        //libraryBook.loanOut(LocalDate.now());
+        //// On s'attend à ce que le library book soit désormais indisponible pour un prêt
+        //System.out.println("Decorator Test: " + libraryBook);
+        //// Résultat attendu : "Clean Code has been loaned out. Due date: 2023-11-14" (date du jour)
 
         /********************************************************************************
          * PATTERN PROXY
@@ -68,17 +68,17 @@ public class Main {
         /********************************************************************************
          * PATTERN FACADE
          ********************************************************************************/
-        // Test pour le Pattern Facade
-        LibraryFacade libraryFacade = new LibraryFacade(oldBookStore);
-
-        // On s'attend à obtenir le livre
-        IBook simpleBook = libraryFacade.getBook("Refactoring Guru");
-        System.out.println("Facade Test : " + simpleBook.getTitle());
-        // Résultat attendu : "Facade Test : Refactoring Guru"
-
-        // On s'attend à obtenir un LibraryBookDecorator via la façade
-        IBook libraryBookViaFacade = libraryFacade.libraryBook("Refactoring Guru");
-        System.out.println("Facade Test : " + libraryBookViaFacade.getTitle());
-        // Résultat attendu : "Facade Test : Refactoring Guru (Library book)"
+        //// Test pour le Pattern Facade
+        //LibraryFacade libraryFacade = new LibraryFacade(oldBookStore);
+//
+        //// On s'attend à obtenir le livre
+        //IBook simpleBook = libraryFacade.getBook("Refactoring Guru");
+        //System.out.println("Facade Test : " + simpleBook.getTitle());
+        //// Résultat attendu : "Facade Test : Refactoring Guru"
+//
+        //// On s'attend à obtenir un LibraryBookDecorator via la façade
+        //IBook libraryBookViaFacade = libraryFacade.libraryBook("Refactoring Guru");
+        //System.out.println("Facade Test : " + libraryBookViaFacade.getTitle());
+        //// Résultat attendu : "Facade Test : Refactoring Guru (Library book)"
     }
 }
