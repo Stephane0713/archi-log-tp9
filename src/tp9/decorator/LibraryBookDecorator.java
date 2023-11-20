@@ -10,35 +10,56 @@ public class LibraryBookDecorator implements BookDecorator {
     private LocalDate date; // date de prêt
 
     public LibraryBookDecorator(Book book) {
-        //TODO à compléter
+        this.book = book;
+    }
+
+    @Override
+    public String getTitle() {
+        return book.getTitle();
+    }
+
+    @Override
+    public void setTitle(String title) {
+        book.setTitle(title);
+    }
+
+    @Override
+    public double getPrice() {
+        return book.getPrice();
+    }
+
+    @Override
+    public void setPrice(double price) {
+        book.setPrice(price);
+    }
+
+    @Override
+    public String preview() {
+        return book.preview();
     }
 
     // définit un prêt. isLoaned de vient vrai, et on fournit la date du prêt
     public void loanOut(LocalDate dueDate) {
-        //TODO à compléter
+        date = dueDate;
+        isLoaned = true;
     }
 
     // Le livre a été ramené, fin du prêt
     public void returnBook() {
-        //TODO à compléter
+        date = null;
+        isLoaned = false;
     }
 
     public boolean isLoanedOut() {
-        //TODO à compléter
-        return false ;
+        return isLoaned;
     }
 
     public LocalDate getDueDate() {
-        //TODO à compléter
-        return null ;
+        return date;
     }
-
-    // Implémentation des méthodes héritées de Book
-    //TODO à compléter
-
 
     public String toString ()
     {
-        return book.getTitle() + (isLoanedOut() ? " has been loaned." : " is available for a loan.");
+        return book.getTitle() + (isLoanedOut() ? " has been loaned. Due date: " + getDueDate() : " is available for a loan.");
     }
 }
