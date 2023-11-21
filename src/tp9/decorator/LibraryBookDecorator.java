@@ -15,7 +15,8 @@ public class LibraryBookDecorator implements BookDecorator {
 
     @Override
     public String getTitle() {
-        return book.getTitle();
+
+        return book.getTitle() + " (Library book)";
     }
 
     @Override

@@ -11,13 +11,10 @@ import tp9.decorator.LibraryBookDecorator;
 public class LibraryFacade {
     private OldBookStore oldBookStore;
     private IBookStore bookStoreAdapter;
-    private LibraryBookDecorator libraryBookDecorator;
-
 
     public LibraryFacade(OldBookStore oldBookStore) {
         this.oldBookStore = oldBookStore;
         this.bookStoreAdapter = new BookStoreAdapter(oldBookStore);
-        this.libraryBookDecorator = new LibraryBookDecorator(new Book("Refactoring Guru Code", 14));
     }
 
 
