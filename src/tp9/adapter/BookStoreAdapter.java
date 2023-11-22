@@ -3,16 +3,20 @@ package tp9.adapter;
 import tp9.Book;
 
 public class BookStoreAdapter implements IBookStore {
-    // TODO trouver quels sont le ou les attributs nécessaires
+
+    // Attribut pour stocker l'instance de OldBookStore
     private OldBookStore oldBookStore;
 
+    // Constructeur prenant une instance de OldBookStore
     public BookStoreAdapter(OldBookStore oldBookStore) {
-        // TODO écrivez ce constructeur
+        this.oldBookStore = oldBookStore;
     }
 
+    // Implémentation de la méthode fetchBook de l'interface IBookStore
     @Override
     public Book fetchBook(String title) {
-        // TODO à vous de faire en sorte que fetchBook exploite l'ancien store pour récupérer l'info du livre en question
-        return null ;
+        // Utilisation de la méthode getBook de OldBookStore
+        // pour récupérer un livre et le retourner
+        return oldBookStore.getBook(title);
     }
 }
