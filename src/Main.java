@@ -27,11 +27,11 @@ public class Main {
         /********************************************************************************
          * PATTERN ADAPTER
          ********************************************************************************/
-//        IBookStore bookStoreAdapter = new BookStoreAdapter(oldBookStore);
-//        // On s'attend à ce que le livre soit récupéré via l'adaptateur
-//        Book adaptedBook = bookStoreAdapter.fetchBook("Design Patterns");
-//        System.out.println("Adapter Test: " + adaptedBook.getTitle());
-//        // Résultat attendu : "Adapter Test: Design Patterns"
+        IBookStore bookStoreAdapter = new BookStoreAdapter(oldBookStore);
+        // On s'attend à ce que le livre soit récupéré via l'adaptateur
+        Book adaptedBook = bookStoreAdapter.fetchBook("Design Patterns");
+        System.out.println("Adapter Test: " + adaptedBook.getTitle());
+        // Résultat attendu : "Adapter Test: Design Patterns"
 
         /********************************************************************************
          * PATTERN DECORATOR
